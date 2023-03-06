@@ -1,0 +1,15 @@
+[tet_ab:children]
+test_a
+
+[test_a]
+alpine1 ansible_host=192.168.56.10
+alpine2 ansible_host=192.168.56.20
+
+[test_b]
+alpine3 ansible_host=192.168.63.10
+alpine4 ansible_host=192.168.63.20
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_pass=pass

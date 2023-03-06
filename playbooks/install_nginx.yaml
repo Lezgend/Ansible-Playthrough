@@ -1,0 +1,25 @@
+- name: Configure Webserver with Nginx
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install Nginx
+      apk:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Copy Nginx Config File
+      copy:
+        src: ~/ansible-playthrough/files/nginx.conf
+        dest: /etc/nginx/nginx.conf
+
+    - name: Copy index.html
+      template:
+        src:  ~/ansible-playthrough/files/index.html.j2
+        dest: /var/www/index.html
+
+    - name: Restart Nginx Service
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
