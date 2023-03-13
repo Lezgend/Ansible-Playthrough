@@ -11,12 +11,12 @@
 
     - name: Copy Nginx Config File
       copy:
-        src: ~/ansible-playthrough/files/nginx.conf
+        src: ~/Ansible-Playthrough/files/nginx.conf
         dest: /etc/nginx/nginx.conf
 
     - name: Copy index.html
       template:
-        src:  ~/ansible-playthrough/files/index.html.j2
+        src:  ~/Ansible-Playthrough/files/index.html.j2
         dest: /var/www/index.html
 
     - name: Restart Nginx Service
