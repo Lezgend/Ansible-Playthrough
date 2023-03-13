@@ -1,5 +1,6 @@
 [tet_ab:children]
 test_a
+test_b
 
 [test_a]
 alpine1 ansible_host=192.168.56.10
